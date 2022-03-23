@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(cors({origin:"*"}))
 
-mongoose.connect('mongodb://localhost:27017/tourism',(err)=>{
+mongoose.connect(`mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@cluster0.b24rp.mongodb.net/${process.env.COLLECTION_NAME}?retryWrites=true&w=majority`,(err)=>{
     if(!err)console.log("Connected")
 })
 
