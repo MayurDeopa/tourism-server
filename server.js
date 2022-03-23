@@ -18,6 +18,6 @@ app.use('/images',imageRouter)
 app.use('/auth',loginRouter)
 
 
-app.listen('8000',()=>{
-    console.log("live on port 8000")
+app.listen(process.env.PORT,()=>{
+    console.log("live")
 })
