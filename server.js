@@ -7,7 +7,10 @@ const app = express()
 
 
 app.use(express.json())
-app.use(cors({origin:"https://travelhome.vercel.app"}))
+app.use(cors({origin:[
+    "https://travelhome.vercel.app",
+    "http://localhost:3000"
+]}))
 
 mongoose.connect(`mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@cluster0.b24rp.mongodb.net/${process.env.COLLECTION_NAME}?retryWrites=true&w=majority`,(err)=>{
     if(!err)console.log("Connected")
